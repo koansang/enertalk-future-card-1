@@ -45,8 +45,8 @@ describe('This Month', () => {
     it('should display metering info', () => {
       let meteringInfoBox = wrapper.find('.metering');
 
-      expect(meteringInfoBox.find('.metering-usage').text()).toBe('0');
-      expect(meteringInfoBox.find('.metering-bill').text()).toBe('0');
+      expect(meteringInfoBox.find('.metering-usage').text()).toBe('0mWh');
+      expect(meteringInfoBox.find('.metering-bill').text()).toBe('0원');
 
       wrapper.setProps({
         metering: {
@@ -72,8 +72,8 @@ describe('This Month', () => {
     it('should display forecast info', () => {
       let forecastInfoBox = wrapper.find('.forecast');
 
-      expect(forecastInfoBox.find('.forecast-usage').text()).toBe('0');
-      expect(forecastInfoBox.find('.forecast-bill').text()).toBe('0');
+      expect(forecastInfoBox.find('.forecast-usage').text()).toBe('0mWh');
+      expect(forecastInfoBox.find('.forecast-bill').text()).toBe('0원');
 
       wrapper.setProps({
         forecast: {
