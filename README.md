@@ -1,10 +1,13 @@
 # EnerTalk Future Card
+[ ![Codeship Status for yongdamsh/enertalk-future-card](https://codeship.com/projects/488beda0-6552-0134-95d1-2a0c9a74fc2b/status?branch=master)](https://codeship.com/projects/175651)
+
 EnerTalk UI components based on react
 
 You can preview UI components [here](https://yongdamsh.github.io/enertalk-future-card)
 
 
 ---
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
