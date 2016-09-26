@@ -11,11 +11,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>EnerTalk Future Card</h2>
         </div>
-        <p className="App-intro">
-          Daily Column Chart
-        </p>
 
         {/* TODO: @yongdamsh To view multiple components, apply react-router */}
+        <p className="App-intro">Daily Column Chart</p>
         <DailyColumnChart />
       </div>
     );
