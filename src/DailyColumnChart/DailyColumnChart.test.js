@@ -23,14 +23,10 @@ describe('This Month', () => {
     let wrapper;
 
     beforeEach(() => {
-      wrapper = shallow(<DailyColumnChart />);
+      wrapper = mount(<DailyColumnChart />);
     });
 
     it('has default props correctly', () => {
-
-      // To test defaultProps, use mount method instead.
-      wrapper = mount(<DailyColumnChart />);
-
       expect(wrapper.prop('metering')).toEqual({
         usage: 0,
         bill: 0,
@@ -45,7 +41,7 @@ describe('This Month', () => {
     it('should display metering info', () => {
       let meteringInfoBox = wrapper.find('.metering');
 
-      expect(meteringInfoBox.find('.metering-usage').text()).toBe('0mWh');
+      expect(meteringInfoBox.find('.metering-usage').text()).toBe('0Wh');
       expect(meteringInfoBox.find('.metering-bill').text()).toBe('0원');
 
       wrapper.setProps({
@@ -57,7 +53,7 @@ describe('This Month', () => {
 
       meteringInfoBox = wrapper.find('.metering');
 
-      expect(meteringInfoBox.find('.metering-usage').text()).toMatch(/150000000/);
+      expect(meteringInfoBox.find('.metering-usage').text()).toMatch('150kWh');
       expect(meteringInfoBox.find('.metering-bill').text()).toMatch(/15000/);
     });
   });
@@ -66,13 +62,13 @@ describe('This Month', () => {
     let wrapper;
 
     beforeEach(() => {
-      wrapper = shallow(<DailyColumnChart />);
+      wrapper = mount(<DailyColumnChart />);
     });
 
     it('should display forecast info', () => {
       let forecastInfoBox = wrapper.find('.forecast');
 
-      expect(forecastInfoBox.find('.forecast-usage').text()).toBe('0mWh');
+      expect(forecastInfoBox.find('.forecast-usage').text()).toBe('0Wh');
       expect(forecastInfoBox.find('.forecast-bill').text()).toBe('0원');
 
       wrapper.setProps({
@@ -84,7 +80,7 @@ describe('This Month', () => {
 
       forecastInfoBox = wrapper.find('.forecast');
 
-      expect(forecastInfoBox.find('.forecast-usage').text()).toMatch(/300000000/);
+      expect(forecastInfoBox.find('.forecast-usage').text()).toMatch('300kWh');
       expect(forecastInfoBox.find('.forecast-bill').text()).toMatch(/30000/);
     });
   });
