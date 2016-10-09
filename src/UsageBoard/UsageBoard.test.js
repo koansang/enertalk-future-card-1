@@ -18,14 +18,24 @@ describe('Frame', () => {
     expect(wrapper.find('article').length).toBe(1);
   });
 
-  it('should display header with headerText prop', () => {
+  it('should display headerText prop', () => {
     wrapper.setProps({
       headerText: 'This Month',
     });
     expect(wrapper.find('header').length).toBe(1);
     expect(wrapper.find('header').text()).toBe('This Month');
   });
+
+  it('should display footerText prop', () => {
+    wrapper.setProps({
+      footerText: 'My Footer',
+    });
+    expect(wrapper.find('header').length).toBe(1);
+    expect(wrapper.find('header').text()).toBe('This Month');
+  });
 });
+
+describe('')
 
 // describe('section', () => {
 //   it('has metering and forecast info box', () => {
