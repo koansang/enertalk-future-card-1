@@ -1,9 +1,9 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import DailyColumnChart from '../src/DailyColumnChart';
+import { storiesOf } from '@kadira/storybook';
+import UsageBoard from '../src/UsageBoard/UsageBoard.jsx';
 import RealtimeUsageChart from '../src/RealtimeUsageChart';
 
-storiesOf('DailyColumnChart', module)
+storiesOf('UsageBoard', module)
   .add('default', () => {
     const props = {
       metering: {
@@ -18,13 +18,11 @@ storiesOf('DailyColumnChart', module)
       language: 'ko',
     };
     return (
-      <DailyColumnChart {...props} />
+      <UsageBoard {...props} />
     );
   });
 
 storiesOf('RealtimeUsageChart', module)
-  .add('default', () => {
-    return (
-      <RealtimeUsageChart />
-    );
-  });
+  .add('default', () => (
+    <RealtimeUsageChart />
+  ));
