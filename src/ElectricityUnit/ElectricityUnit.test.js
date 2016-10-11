@@ -77,10 +77,10 @@ describe('ElectricityUnit', () => {
   });
 
   it('supports instant electricity unit', () => {
-    expect(shallow(<ElectricityUnit amount={555} isInstant={true} />).find('.unit').text()).toBe('mW');
-    expect(shallow(<ElectricityUnit amount={555555} isInstant={true} />).find('.unit').text()).toBe('W');
-    expect(shallow(<ElectricityUnit amount={555555555} isInstant={true} />).find('.unit').text()).toBe('kW');
-    expect(shallow(<ElectricityUnit amount={555555555555} isInstant={true} />).find('.unit').text()).toBe('MW');
+    expect(shallow(<ElectricityUnit amount={555} isInstant />).find('.unit').text()).toBe('mW');
+    expect(shallow(<ElectricityUnit amount={555555} isInstant />).find('.unit').text()).toBe('W');
+    expect(shallow(<ElectricityUnit amount={555555555} isInstant />).find('.unit').text()).toBe('kW');
+    expect(shallow(<ElectricityUnit amount={555555555555} isInstant />).find('.unit').text()).toBe('MW');
   });
 
   describe('filterFloatingPoint', () => {

@@ -4,28 +4,20 @@ import ElectricityUnit from '../ElectricityUnit';
 import ElectricityBill from '../ElectricityBill';
 
 function UsageBoard(props) {
-  const { headerText, footerText, usage, bill, l11n } = props;
+  const { headerText, usage, bill, ...options } = props;
 
   return (
     <article className="usage-board">
       <header>{headerText}</header>
       <section>
-        <div className="bill">
-          {<ElectricityBill amount={bill} {...l11n} />}
-        </div>
-        <div className="usage">
-          {<ElectricityUnit amount={usage} />}
-        </div>
+        {<ElectricityBill amount={bill} {...options} />}
       </section>
-      {footerText ? <footer>{footerText}</footer> : null}
+      <footer>
+        {<ElectricityUnit amount={usage} {...options} />}
+      </footer>
     </article>
   );
 }
-
-const l11nPropShape = PropTypes.shape({
-  country: PropTypes.oneOf(['US', 'KR', 'JP']),
-  language: PropTypes.oneOf(['en', 'ko', 'ja']),
-});
 
 UsageBoard.defaultProps = {
   headerText: 'My UsageBoard',
@@ -35,10 +27,8 @@ UsageBoard.defaultProps = {
 
 UsageBoard.propTypes = {
   headerText: PropTypes.string.isRequired,
-  footerText: PropTypes.string,
   usage: PropTypes.number.isRequired,
   bill: PropTypes.number.isRequired,
-  l11n: l11nPropShape,
 };
 
 export default UsageBoard;

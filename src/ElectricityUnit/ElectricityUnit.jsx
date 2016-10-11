@@ -18,7 +18,6 @@ function filterFloatingPoint(amount, precision) {
 }
 
 function ElectricityUnit({ amount, precision, isInstant }) {
-
   let displayAmount;
   let displayUnit;
 

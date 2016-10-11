@@ -1,21 +1,31 @@
+/* eslint import/extensions: "off" */
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import UsageBoard from '../src/UsageBoard/UsageBoard.jsx';
 import RealtimeUsageChart from '../src/RealtimeUsageChart';
 
 storiesOf('UsageBoard', module)
-  .add('default', () => {
+  .add('metering', () => {
     const props = {
-      metering: {
-        usage: 150000000,
-        bill: 15000,
-      },
-      forecast: {
-        usage: 250000000,
-        bill: 25000,
-      },
+      headerText: '현재',
+      usage: 234100000,
+      bill: 30290,
       country: 'KR',
       language: 'ko',
+      precision: 1,
+    };
+    return (
+      <UsageBoard {...props} />
+    );
+  })
+  .add('forecast', () => {
+    const props = {
+      headerText: '예상',
+      usage: 351100000,
+      bill: 63220,
+      country: 'KR',
+      language: 'ko',
+      precision: 1,
     };
     return (
       <UsageBoard {...props} />

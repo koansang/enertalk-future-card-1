@@ -24,28 +24,17 @@ function filterFloatingPoint(amount = 0, precision = 0) {
   return parseFloat(amount.toFixed(precision));
 }
 
-function ElectricityBill({ amount, ...options }) {
-
-  const { precision, country, language } = options;
-  let displayAmount;
-  let displayUnit;
-
-  displayAmount = filterFloatingPoint(amount, precision).toLocaleString();
-  displayUnit = UNIT[country][language];
+function ElectricityBill(props) {
+  const { amount, precision, country, language } = props;
+  const displayAmount = filterFloatingPoint(amount, precision).toLocaleString();
+  const displayUnit = UNIT[country][language];
 
   return (
     <span>
       {displayUnit.pre ? <span className="unit">{displayUnit.label}</span> : null}
       <span className="amount">{displayAmount}</span>
-      {displayUnit.pre ? null: <span className="unit">{displayUnit.label}</span>}
+      {displayUnit.pre ? null : <span className="unit">{displayUnit.label}</span>}
     </span>
-  );
-}
-
-function InvalidPropError(propName, componentName) {
-  return new Error(
-    'Invalid prop `' + propName + '` supplied to' +
-    ' `' + componentName + '`. Validation failed.'
   );
 }
 
@@ -59,20 +48,8 @@ ElectricityBill.defaultProps = {
 ElectricityBill.propTypes = {
   amount: PropTypes.number,
   precision: PropTypes.number,
-  country: function(props, propName, componentName) {
-    const allowedCountries = ['KR', 'US', 'JP'];
-
-    if (allowedCountries.indexOf(props[propName]) === -1) {
-      return InvalidPropError(propName, componentName);
-    }
-  },
-  language: function(props, propName, componentName) {
-    const allowedLanguages = ['ko', 'en', 'ja'];
-
-    if (allowedLanguages.indexOf(props[propName]) === -1) {
-      return InvalidPropError(propName, componentName);
-    }
-  },
+  country: PropTypes.oneOf(['US', 'KR', 'JP']),
+  language: PropTypes.oneOf(['en', 'ko', 'ja']),
 };
 
 export default ElectricityBill;
