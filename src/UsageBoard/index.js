@@ -1,3 +1,3 @@
-import UsageBoard from './UsageBoard';
+import UsageBoard from './UsageBoard.jsx';
 
 export default UsageBoard;
