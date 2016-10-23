@@ -10,7 +10,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
     "react-addons-test-utils": "^15.3.2",
-    "react-scripts": "0.6.1"
+    "react-scripts": "0.7.0"
   },
   "dependencies": {
     "@kadira/storybook": "^2.20.1",
