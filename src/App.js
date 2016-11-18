@@ -3,6 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import UsageBoard from './UsageBoard';
 import RealtimeUsageChart from './RealtimeUsageChart';
+import Todo from './TodoList';
 
 function App() {
   return (
@@ -11,12 +12,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>EnerTalk Future Card</h2>
       </div>
-
       {/* TODO: @yongdamsh To view multiple components, apply react-router */}
-      <p className="App-intro">Daily Column Chart</p>
-      <UsageBoard />
-
-      <RealtimeUsageChart />
+      <Todo />
     </div>
   );
 }
