@@ -1,9 +1,7 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import UsageBoard from './UsageBoard';
-import RealtimeUsageChart from './RealtimeUsageChart';
-import Todo from './TodoList';
+import Todo from './Todo';
 
 function App() {
   return (

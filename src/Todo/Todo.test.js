@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { shallow } from 'enzyme';
 import Todo from './Todo';
 
@@ -13,10 +13,10 @@ describe('<Todo />', () => {
     expect(wrapper.type()).toBe('div');
   });
 
-  test('inital state', () => {
+  test('initial state', () => {
     expect(wrapper.state()).toEqual({
       todos: [],
-      todo: null,
+      todo: '',
     });
   });
 
@@ -48,5 +48,4 @@ describe('<Todo />', () => {
       'New Todo',
     ]);
   });
-
 });

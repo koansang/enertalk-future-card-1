@@ -6,7 +6,7 @@ class Todo extends Component {
 
     this.state = {
       todos: [],
-      todo: null,
+      todo: '',
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
@@ -33,8 +33,8 @@ class Todo extends Component {
           <button onClick={this.addTodo}>Add</button>
         </header>
         {
-          this.state.todos.map((todo) => (
-            <div>{todo}</div>
+          this.state.todos.map(todo => (
+            <div key={todo}>{todo}</div>
           ))
         }
       </div>
