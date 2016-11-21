@@ -1,21 +1,30 @@
 {
   "name": "enertalk-future-card",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "http://yongdamsh.github.io/enertalk-future-card",
   "devDependencies": {
-    "enzyme": "^2.4.1",
-    "react-addons-test-utils": "^15.3.2",
-    "react-scripts": "0.6.1"
+    "eslint": "^3.9.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-react": "^6.3.0",
+    "react-scripts": "0.7.0"
   },
   "dependencies": {
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "@kadira/storybook": "^2.20.1",
+    "@kadira/storybook-addon-knobs": "^1.3.0",
+    "enzyme": "^2.4.1",
+    "react": "^15.4.0",
+    "react-addons-test-utils": "^15.4.0",
+    "react-dom": "^15.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -s public -o .out"
   }
 }

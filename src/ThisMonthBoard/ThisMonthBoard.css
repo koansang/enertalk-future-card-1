@@ -1,0 +1,11 @@
+.this-month-board {
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-top: 1px solid #cfe5e8;
+  border-bottom: 1px solid #cfe5e8;
+}
+
+.this-month-board > .usage-board {
+  width: 50%;
+}

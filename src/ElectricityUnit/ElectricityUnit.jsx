@@ -17,8 +17,7 @@ function filterFloatingPoint(amount, precision) {
   return amount.toFixed(precision);
 }
 
-function ElectricityUnit({ amount = 0, precision = 0, isInstant = false }) {
-
+function ElectricityUnit({ amount, precision, isInstant }) {
   let displayAmount;
   let displayUnit;
 
@@ -51,16 +50,16 @@ function ElectricityUnit({ amount = 0, precision = 0, isInstant = false }) {
   );
 }
 
-ElectricityUnit.propTypes = {
-  amount: PropTypes.number,
-  precision: PropTypes.number,
-  isInstant: PropTypes.bool,
-};
-
 ElectricityUnit.defaultProps = {
   amount: 0,
   precision: 0,
   isInstant: false,
+};
+
+ElectricityUnit.propTypes = {
+  amount: PropTypes.number,
+  precision: PropTypes.number,
+  isInstant: PropTypes.bool,
 };
 
 export default ElectricityUnit;
