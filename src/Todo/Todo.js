@@ -43,10 +43,10 @@ class Todo extends Component {
     //this.state.todos로 하면 state가 변경은 되나 view에는 반영 되지 않음.
 
     const todos = this.state.todos;
-
-    this.setState({
-        todos: todos.splice(index, 1)
-    });
+    todos.splice(index, 1);
+    
+    // splice의 return값은 삭제된 item이고, 실제 array가 변경됨
+    this.setState({ todos });
   }
 
   render() {
